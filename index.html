@@ -3,66 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Your Name - Web Developer | Bengaluru</title>
+    <meta name="description" content="Web Developer & Designer based in Bengaluru. Specializing in modern, responsive websites and e-commerce solutions.">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
         }
+        
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            background: #444;
-            padding: 0.5rem;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .hero {
-            text-align: center;
-            padding: 2rem 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
-            margin-bottom: 2rem;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
+        nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: block;
+        }
+        
+        nav ul li a:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        section {
+            margin-bottom: 4rem;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        section h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            border-color: #667eea;
+            transform: translateY(-10px);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .contact-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
         footer {
-            background: #333;
+            background: linear-gradient(135deg, #333 0%, #222 100%);
             color: #fff;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+            padding: 2.5rem 1rem;
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            nav ul { flex-direction: column; align-items: center; }
+            nav ul li { margin: 0.5rem 0; }
+            .container { padding: 1rem; }
+            section { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Your Name</h1>
     </header>
     
     <nav>
@@ -76,35 +237,62 @@
     
     <div class="container">
         <section id="home" class="hero">
-            <h2>Hello, I'm [Your Name]</h2>
-            <p>Web Developer & Designer based in Bengaluru</p>
+            <h2>Hello, I'm <strong>Your Name</strong></h2>
+            <p>Full-Stack Web Developer & Designer<br>Creating pixel-perfect digital experiences</p>
+            <a href="#contact" class="btn">Get In Touch</a>
         </section>
         
         <section id="about">
             <h2>About Me</h2>
-            <p>I'm passionate about creating beautiful and functional websites. With experience in HTML, CSS, and JavaScript, I help bring ideas to life on the web.</p>
+            <p>I'm a passionate web developer based in Bengaluru, specializing in crafting modern, responsive websites that deliver exceptional user experiences. With expertise in HTML5, CSS3, JavaScript, React, and Node.js, I transform ideas into scalable digital solutions.</p>
+            <p>Let's collaborate to bring your vision to life with clean code and beautiful design.</p>
         </section>
         
         <section id="services">
             <h2>My Services</h2>
-            <ul>
-                <li>Website Design & Development</li>
-                <li>Responsive Web Design</li>
-                <li>E-commerce Solutions</li>
-                <li>SEO Optimization</li>
-            </ul>
+            <p>From concept to launch, I offer end-to-end web solutions tailored to your needs.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Website Design & Development</h3>
+                    <p>Custom websites built with modern technologies and pixel-perfect design.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Responsive Web Design</h3>
+                    <p>Mobile-first designs that look stunning on every device and screen size.</p>
+                </div>
+                <div class="service-card">
+                    <h3>E-commerce Solutions</h3>
+                    <p>Scalable online stores with secure payment integration and inventory management.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SEO Optimization</h3>
+                    <p>Search engine optimized websites that rank higher and drive organic traffic.</p>
+                </div>
+            </div>
         </section>
         
         <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Email: your.email@example.com</p>
-            <p>Phone: +91-XXXXXXXXXX</p>
-            <p>Location: Bengaluru, Karnataka</p>
+            <h2>Let's Work Together</h2>
+            <p>Ready to start your next project? I'd love to hear from you.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>your.name@email.com</strong>
+                    <p>Email me directly</p>
+                </div>
+                <div class="contact-item">
+                    <strong>+91 98765 43210</strong>
+                    <p>Call or WhatsApp</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Bengaluru, Karnataka</strong>
+                    <p>Available for remote & onsite work</p>
+                </div>
+            </div>
         </section>
     </div>
     
     <footer>
-        <p>&copy; 2026 My Website. All rights reserved. [web:1][web:2][web:3]</p>
+        <p>&copy; 2026 Your Name. All rights reserved. | Built with ❤️ in Bengaluru</p>
     </footer>
 </body>
 </html>
